@@ -1,0 +1,49 @@
+﻿<Window x:Class="Avanade.GiftCards.WPF.Views.UpdateGiftCardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avanade.GiftCards.WPF.Views"
+        xmlns:vm="clr-namespace:Avanade.GiftCards.WPF.ViewModels"
+        mc:Ignorable="d"
+         d:DataContext="{d:DesignInstance Type=vm:UpdateGiftCardViewModel, IsDesignTimeCreatable=True}"
+        Title="UpdateGiftCardView" Height="450" Width="800">
+    <Grid Margin="-2, 0, 2, 0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Modifica GiftCard" FontSize="34" Grid.ColumnSpan="2"/>
+
+        <TextBlock Text="Mittente:" Grid.Column="0" Grid.Row="1" Margin="5"/>
+        <TextBox Text="{Binding Mittente}" Grid.Column="1" Grid.Row="1" Margin="5"/>
+
+        <TextBlock Text="Destinatario:" Grid.Column="0" Grid.Row="2" Margin="5"/>
+        <TextBox Text="{Binding Destinatario}" Grid.Column="1" Grid.Row="2" Margin="5"/>
+
+        <TextBlock Text="Messaggio:" Grid.Column="0" Grid.Row="3" Margin="5"/>
+        <TextBox Text="{Binding Messaggio}" Grid.Column="1" Grid.Row="3" Margin="5"/>
+
+        <TextBlock Text="Importo:" Grid.Column="0" Grid.Row="4" Margin="5"/>
+        <TextBox Text="{Binding Importo}" Grid.Column="1" Grid.Row="4" Margin="5"/>
+
+        <TextBlock Text="Data di scadenza:" Grid.Column="0" Grid.Row="5" Margin="5"/>
+        <DatePicker Grid.Column="1" Grid.Row="5" SelectedDate="{Binding DataDiScadenza}" Margin="4, 0"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="1" VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right" Width="100" Margin="4">
+            <Button Margin="4,4,10,4" Width="100" Command="{Binding UpdateCommand}">
+                Aggiorna
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
