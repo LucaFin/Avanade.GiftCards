@@ -31,7 +31,7 @@ namespace Avanade.GiftCards.Mock.Storage
                     Destinatario = "Paolino Paperino",
                     Messaggio = "Buono per l'affitto",
                     Importo = 100,
-                    DataDiScadenza = new DateTime(2022, 2, 1)
+                    DataDiScadenza = new DateTime(2021, 2, 1)
                 });
         }
     }
